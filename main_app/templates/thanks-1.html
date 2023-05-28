@@ -1,0 +1,259 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+  <html>
+    <head>
+      <meta charset="utf-8" />
+      
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link
+        rel="stylesheet"
+        href="{% static 'assets_ty/css/bootstrap.min.css' %}"
+      />
+      <link
+        rel="stylesheet"
+        href="{% static 'assets_ty/css/fontawesome-all.css' %}"
+      />
+      <link rel="stylesheet" href="{% static 'assets_ty/css/style.css' %}" />
+      <link
+        rel="shortcut icon"
+        type="image/png"
+        href="{% static 'assets_ty/favicon.ico' %}"
+      />
+    </head>
+    <body class = "text-dark">
+      <div class ="container">
+	<nav class = "navbar bg-dark text-black py-2 p-5 navbar-expand-sm fixed-top navbar-dark bg-black" >
+		<a href = "#" class = "d-inline-block  align-top navbar-brand font-weight-bold mb-0 fs-1">
+			<img src = "https://getbootstrap.com/docs/4.0/assets/brand/bootstrap-solid.svg" width = "30" height = "30" class  ="fs-5"/>
+			<strong>BAISAKHI.AI</strong>
+		</a>
+		<button type = "button" data-toggle="collaps" data-target = "#navbarNav" class ="navbar-toggler" aria-controls ="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+			<span class = "navbar-toggler-icon"></span></button>
+		<div class ="collapse navbar-collapse flex-d align-items-end justify-content-end" id = "navbarNav">
+			<ul class = "navbar-nav px-2">
+				<li class ="nav-item active  fs-4" >
+					<a href="#">
+    			<div class="mask nav-link" style="background-color: hsla(0, 0%, 98%, 0.0)"> Home</div>
+  					</a>
+
+				</li>
+				<li class ="nav-item fs-4 px-5 dropdown">
+					<a href ="#" class  = "nav-link dropdown dropdown-toggle" id ="navbarDropdown" role ="button" data-bs-toggle ="dropdown" aria-expaned="false"> Features</a>
+					<ul class ="dropdown-menu" aria-labelledby ="navbarDropdown">
+						<li>
+							<a href ="#" class ="dropdown-item"> Feature 1</a>
+						</li>
+						<li>
+							<a href ="#" class ="dropdown-item"> Feature 2</a>
+						</li>
+						<li>
+							<a href ="#" class ="dropdown-item"> Feature 3</a>
+						</li>
+					</ul>
+				</li>
+				<li class ="nav-item fs-4 dropdown">
+					<a href ="#" class  = "nav-link dropdown dropdown-toggle" id ="navbarDropdown" role ="button" data-bs-toggle ="dropdown" aria-expaned="false">Pricing</a>
+					<ul class ="dropdown-menu" aria-labelledby ="navbarDropdown">
+						<li>
+							<a href ="#" class ="dropdown-item"> Feature 1</a>
+						</li>
+						<li>
+							<a href ="#" class ="dropdown-item"> Feature 2</a>
+						</li>
+						<li>
+							<a href ="#" class ="dropdown-item"> Feature 3</a>
+						</li>
+					</ul>
+				</li>
+
+			</ul>
+			<div class ="mx-5 px-5 align-items-end">
+				<button type="button" class="btn btn-outline-info ml-5 px-5">Sign In</button>
+				<button type="button" class="btn bg-info btn-primary px-5">Sign Up</button>
+			</div>
+			
+		</div>
+	</nav>
+</div>
+
+      <!-- Start of thank you section
+ 	============================================= -->
+      <section id="thank-you" class="thank-you-section ">
+        <div class="container text-white  ">
+          <div
+            class="thank-you-wrapper position-relative thank-wrapper-style-one"
+          >
+            <!-- <div class="thank-you-close text-center">x</div> -->
+            <div class="thank-txt text-center text-white">
+              <div class="thank-icon">
+                <img src="{% static 'assets_ty/img/try2.png' %}" height="500" width="500" alt="" />
+              </div>
+              <div class = "text-info">
+              <h2>
+                CROP RECOMMENDATION : 
+                
+              </h2>
+              <div class = "text-white">
+              <h2>
+                {{crop_name}} 
+              </h2>
+            </div>
+            <div class = "text-info">
+              <h2>
+                <br/>Yield - 
+              </h2>
+            </div>
+            <div class = "text-white">
+              <h2>
+                {{yield}} Tonnes
+              </h2>
+            </div>
+            <div class = "text-info">
+              <h2>
+                <br />
+                Net Production -
+              </h2>
+            </div>
+            <div class = "text-white">
+              <h2>
+                {{netprod}} Tonnes
+              <br />
+              </h2>
+            </div>
+            <div class = "text-info">
+              <h2>
+                <br />
+                Calculation Accuracy ->
+              </h2>
+            </div>
+            <div class = "text-white">
+              <h2>
+                {{accuracy}}%
+              
+              </h2>
+            </div>
+               
+              
+              
+              {% if not isYield %}
+              <div class="container">
+                <div class"row">
+                <button
+                  class="btn enableEthereumButton btn-outline-primary btn-lg"
+                >
+                  Connect to Metamask
+                </button>
+              </div>
+              <br>
+              <div class"row">
+                <button
+                  class=" sendEthButton btn btn-primary btn-lg"
+                >
+                  Buy the {{crop_name}} 0.001eth
+                </button>
+              </div>
+              </div>
+              <script>
+                const ethereumButton = document.querySelector('.enableEthereumButton');
+const sendEthButton = document.querySelector('.sendEthButton');
+
+let accounts = [];
+
+//Sending Ethereum to an address
+sendEthButton.addEventListener('click', () => {
+  ethereum
+    .request({
+      method: 'eth_sendTransaction',
+      params: [
+        {
+          from: accounts[0],
+          to: '0x2f318C334780961FB129D2a6c30D0763d9a5C970',
+          value: '0x29a2241af62c0000',
+          gasPrice: '0x09184e72a000',
+          gas: '0x2710',
+        },
+      ],
+    })
+    .then((txHash) => console.log(txHash))
+    .catch((error) => console.error);
+});
+
+ethereumButton.addEventListener('click', () => {
+  getAccount();
+});
+
+async function getAccount() {
+  accounts = await ethereum.request({ method: 'eth_requestAccounts' });
+}
+              </script>
+              {% comment %} <div class="container">
+                <div class"row">
+                <button
+                  class="btn btn-outline-primary btn-lg"
+                  onclick="connectWallet()"
+                >
+                
+                  Connect to Metamask
+                </button>
+              </div>
+              <br>
+              <div class"row">
+                <button
+                  class="btn btn-primary btn-lg"
+                  onclick="sendTransaction()"
+                >
+                  Buy the {{crop_name}}
+                </button>
+              </div>
+              </div>
+
+              <script>
+                async function connectWallet() {
+                  accounts = await window.ethereum
+                    .request({ method: "eth_requestAccounts" })
+                    .catch((err) => {
+                      console.log(err);
+                    });
+                }
+                async function sendTransaction() {
+                  let params = [
+                    {
+                      from: "0x4Ff0f27687A05C04fcB65DAf5e506d0E3CBe0a83",
+                      to: "0xE58e93eC06bC175Af0c8fd315660796b1dcB3969",
+                      gas: "0x76c0", // 30400
+                      gasPrice: "0x9184e72a000", // 10000000000000
+                      value: "0x9184e72a", // 2441406250
+                     },
+                  ];
+                  let result = await window.ethereum
+                    .request({ method: "eth_sendTransaction", params })
+                    .catch((err) => {
+                      console.log(err);
+                    });
+                }
+              </script> {% endcomment %}
+              {% endif %}
+             
+              <a
+                class="d-block text-center text-uppercase"
+                href="{% url 'main_app:home' %}"
+                >Back to Home</a
+              >
+            </div>
+            <div class="th-bottom-vector position-absolute">
+
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- End of thank you section
+ 	============================================= -->
+
+      <script src="{% static 'assets_ty/js/jquery-3.3.1.min.js' %}"></script>
+      <script src="{% static 'assets_ty/js/bootstrap.min.js' %}"></script>
+      <script src="{% static 'assets_ty/js/main.js' %}"></script>
+    </body>
+  </html>
+</html>
