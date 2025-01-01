@@ -107,6 +107,22 @@ Access the application at: `http://127.0.0.1:8000`
 
 ---
 
+
+## 📸 Visual Overview
+
+### Dashboard
+![Screenshot 1](images/s4.jpg)
+
+
+### Soil Parameter Input Form
+![Screenshot 2](images/s1.jpg)
+![Screenshot 2](images/s3.jpg)
+
+### Crop Recommendations and Secure Transactions
+![Screenshot 3](images/s2.jpg)
+
+---
+
 ## ✨ Upcoming Features
 
 1. **Data Visualization:** Enhanced visual representations of soil parameters and crop recommendations to make insights more accessible.
@@ -131,19 +147,6 @@ With its user-friendly interface, secure blockchain integration, and scalability
 
 ---
 
-## 📸 Screenshots
-
-### Dashboard
-![Screenshot 1](https://github.com/arnavgupta2003/BaisakhiAI/blob/main/s1.jpg)
-
-### Crop Recommendations
-![Screenshot 2](https://github.com/arnavgupta2003/BaisakhiAI/blob/main/s2.jpg)
-
-### Soil Parameter Input Form
-![Screenshot 3](https://github.com/arnavgupta2003/BaisakhiAI/blob/main/s3.jpg)
-
-### Secure Transactions
-![Screenshot 4](https://github.com/arnavgupta2003/BaisakhiAI/blob/main/s4.jpg)
 
 <p align="center">--- End of Document ---</p>
 
